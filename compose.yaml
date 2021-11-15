@@ -1,0 +1,24 @@
+version: "3"
+services:
+  node-backend:
+    image: zeusequinox/mern-sample-app
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongodburi
+    networks:
+      - mern
+  mongodburi:
+    image: mongo:4.2.0
+    ports:
+      - "27017:27017"
+    networks:
+      - mern
+    volumes:
+      - mongo-data:/data/db
+networks:
+    mern:
+      driver: bridge
+volumes:
+    mongo-data:
+     driver: local
