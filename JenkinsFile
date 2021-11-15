@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Creating DockerFile'
-                sh "docker build . -t "zeusequinox/mern-sample-app"
+                sh "docker build . -t zeusequinox/mern-sample-app"
             }
         }
         stage('Test') {
