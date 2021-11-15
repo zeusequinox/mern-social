@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh 'whoami'
                 echo 'Creating DockerFile'
                 sh "docker build . -t zeusequinox/mern-sample-app"
             }
