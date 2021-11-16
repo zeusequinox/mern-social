@@ -17,7 +17,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo "Running Docker Compose"
-                sh "docker-compose -f compose.yaml up"
+                sh "docker-compose -f -d compose.yaml up"
             }
         }
     }
